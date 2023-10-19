@@ -9,7 +9,7 @@ if (isset ($_POST['Enviar'])) {
 
     $query ="UPDATE productos
     SET IdProducto = '$IdProducto', Nombre = '$nombreProducto', Tipo = '$tipoProducto', 
-    Imagen = '$imagenProducto', Stock = '$stockProducto'";
+    Imagen = '$rutaImagen', Stock = '$stockProducto'";
     $Consulta=mysqli_query($conn,$query);
 
     if ($Consulta) {
