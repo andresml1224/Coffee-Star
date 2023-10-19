@@ -306,6 +306,7 @@
                     </div>
                 </div>
                 <a href="Login.php" class="nav-item nav-link">Login</a>
+                <a href="Perfil.php" class="nav-item nav-link">Ver Perfil</a>
             </div>
         </div>
     </nav>
