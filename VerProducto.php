@@ -129,8 +129,8 @@
             <tr>
                 <td><?php echo $vec[0];?></td>
                 <td><?php echo $vec[1];?></td>
-                <td<img src="<?php echo $vec[2]?>" style="width: 200px; height: auto;"></td>
-                <td><?php echo $vec[3];?></td>
+                <td><?php echo $vec[2];?></td>
+                <td><img src="<?php echo $vec[3];?>" style="width: 200px; height: auto;"></td>
                 <td><?php echo $vec[4];?></td>
                 <td>
                     <a href='ActProductosForm.php?doc=<?php echo $vec[0]?>'><i class="fa-solid fa-pen-to-square"></i></a>
