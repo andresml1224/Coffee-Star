@@ -4,10 +4,15 @@ if (isset ($_POST['Enviar'])) {
     $IdProducto = $_POST['Id'];
     $nombreProducto = $_POST['Nombre'];
     $tipoProducto = $_POST['Tipo'];
-    $imagenProducto = $_POST['Imagen'];
-    $stockProducto = $_POST['Stock'];
 
-    $query ="UPDATE productos
+    if (isset($_FILES['Imagen']['name'])) {
+        $rutaImagen = 'img/' . $_FILES['Imagen']['name'];
+        move_uploaded_file($_FILES['Imagen']['tmp_name'], $rutaImagen);
+    } else {
+        $rutaImagen = $imagenProducto;
+    }
+
+    $query = "UPDATE productos
     SET IdProducto = '$IdProducto', Nombre = '$nombreProducto', Tipo = '$tipoProducto', 
     Imagen = '$rutaImagen', Stock = '$stockProducto'";
     $Consulta=mysqli_query($conn,$query);
@@ -20,5 +25,4 @@ if (isset ($_POST['Enviar'])) {
     }
 
 }
-
 ?>
