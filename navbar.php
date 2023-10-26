@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['Documento'])) {
-        header('Location: login.php');
+        header('Location: Login.php');
     }else {
         $rol = $_SESSION['Rol'];
         if($rol == 4){ ?>
@@ -26,7 +26,7 @@
                 </div>
                 <a href="Perfil.php" class="nav-item nav-link">Ver Perfil</a>
                 <a href="Carrito.php" class="nav-item nav-link">Ver Carrito</a>
-                <a href="" class="nav-item nav-link">Cerrar Sesion</a>
+                <a href="Login.php" class="nav-item nav-link">Cerrar Sesion</a>
             </div>
         </div>
     </nav>
@@ -98,7 +98,7 @@
                 </div>
                 <a href="Perfil.php" class="nav-item nav-link">Ver Perfil</a>
                 <a href="Carrito.php" class="nav-item nav-link">Ver Carrito</a>
-                <a href="" class="nav-item nav-link">Cerrar Sesion</a>
+                <a href="Login.php" class="nav-item nav-link">Cerrar Sesion</a>
             </div>
         </div>
     </nav>
@@ -168,7 +168,7 @@
                     </div>
                 </div>
                 <a href="Perfil.php" class="nav-item nav-link">Ver Perfil</a>
-                <a href="" class="nav-item nav-link">Cerrar Sesion</a>
+                <a href="Login.php" class="nav-item nav-link">Cerrar Sesion</a>
             </div>
         </div>
     </nav>
@@ -309,6 +309,7 @@
                 </div>
                 <a href="Login.php" class="nav-item nav-link">Login</a>
                 <a href="Perfil.php" class="nav-item nav-link">Ver Perfil</a>
+                <a href="Login.php" class="nav-item nav-link">Cerrar Sesion</a>
             </div>
         </div>
     </nav>
