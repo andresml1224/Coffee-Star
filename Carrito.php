@@ -23,6 +23,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/estiloCarrito.css" rel="stylesheet">
 </head>
 <body>
     <?php
@@ -30,11 +31,6 @@
     ?>
 
 <!-- About Start -->
-<div class="container-fluid py-5">
-        <div class="container">
-            <div class="section-title">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Carrito de compras</h4>
-            </div>
     <section class="contenedor">
         <!-- Contenedor de elementos -->
         <div class="contenedor-items">
@@ -45,8 +41,8 @@
             <div class="item">
                 <span class="codigo-item"><?php $vec[0] ?></span>
                 <span class="titulo-item"><?php echo $vec[1]. " - ". $vec[2] ?></span>
-                <img src="img/logo.png" alt="" class="img-item">
-                <span class="precio-item"><?php $vec[5] ?></span>
+                <img src="img/logo.png" alt="" class="img-item" style="height: 200px; width: 130px">
+                <span class="precio-item"><?php echo "$ ". $vec[5] ?></span>
                 <button class="boton-item">Agregar al Carrito</button>
             <?php } ?>
         </div>
@@ -55,7 +51,17 @@
             <div class="header-carrito">
                 <h2>Tu Carrito</h2>
             </div>
-
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">
+                        $120.000,00
+                    </span>
+                </div>
+                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+        </div>
+    </section>
 <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
         <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
             <div class="col-lg-3 col-md-6 mb-5">
