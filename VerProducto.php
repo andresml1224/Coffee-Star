@@ -113,6 +113,7 @@
             <th>Tipo</th>
             <th>Imagen</th>
             <th>Stock</th>
+            <th>Precio</th>
             <th>Acciones</th>
         </tr>
         <?php
@@ -132,6 +133,7 @@
                 <td><?php echo $vec[2];?></td>
                 <td><img src="<?php echo $vec[3];?>" style="width: 200px; height: auto;"></td>
                 <td><?php echo $vec[4];?></td>
+                <td><?php echo $vec[5];?></td>
                 <td>
                     <a href='ActProductosForm.php?doc=<?php echo $vec[0]?>'><i class="fa-solid fa-pen-to-square"></i></a>
                     <a href='EliminarProducto.php?doc=<?php echo $vec[0]?>'><i class="fa-duotone fa-trash"></i></a>

@@ -1,16 +1,8 @@
-<?php
-  include 'conexionBase.php';
-  $doc=$_GET['doc'];
-  $query="SELECT * FROM productos WHERE idProducto =$doc";
-  $Consulta=mysqli_query($conn,$query);
-  $vec=mysqli_fetch_array($Consulta);
-?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>CoffeeSTAR</title>
+    <title>Carrito</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free Website Template" name="keywords">
     <meta content="Free Website Template" name="description">
@@ -32,58 +24,38 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
 </head>
-
 <body>
-<?php
-        include "navbar.php";
+    <?php
+        include 'navbar.php'
     ?>
 
-    <div class="col-lg-6">
-        <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
-            <h1 class="text-white mb-4 mt-5">Registro productos</h1>
-            <form class="mb-5" action="productoActualizar.php" method="post">
-                <div class="form-group">
-                    <h2 class="text-primary font-weight-medium m-0">Ingrese la identificacion del prodcucto</h2>
-                    <input type="number" class="form-control" name="Id" value= "<?php echo $vec[0] ?>"
-                        required="required" />
-                </div>
-                <div class="form-group">
-                    <h2 class="text-primary font-weight-medium m-0">Ingrese el nombre</h2>
-                    <input type="text" class="form-control" name="Nombre" value= "<?php echo $vec[1] ?>"
-                        required="required" />
-                </div>
-                <div class="form-group">
-                    <h2 class="text-primary font-weight-medium m-0">Ingrese el tipo de producto</h2>
-                    <select class="custom-select" style="height: 49px;" name="Tipo" value="<?php echo $vec[2] ?>">
-                        <option value="0" selected> </option>
-                        <option value="Caliente">Bebidas Calientes</option>
-                        <option value="Frias">Bebidas frias</option>
-                        <option value="Tragos">Bar en general</option>
-                        <option value="Postres">Tortas y postres</option>
-                    </select>
-                <div class="form-group">
-                    <h2 class="text-primary font-weight-medium m-0">Ingrese la imagen</h2>
-                    <input type="file" class="form-control" name="Imagen" value="<?php echo $vec[3] ?>"/>
-                </div>
-                <div class="form-group">
-                    <h2 class="text-primary font-weight-medium m-0">Ingrese el stock</h2>
-                    <input type="number" class="form-control" name="Stock" value="<?php echo $vec[4] ?>"
-                        required="required" />
-                </div>
-                <div class="form-group">
-                    <h2 class="text-primary font-weight-medium m-0">Ingrese el precio</h2>
-                    <input type="number" class="form-control" name="Precio" value="<?php echo $vec[5] ?>"
-                        required="required" />
-                </div>
-                <div>
-                    <input class="btn btn-primary btn-block font-weight-bold py-3" type="reset" value="Reset">
-                    <input class="btn btn-primary btn-block font-weight-bold py-3" type="submit" value="Enviar" name="Enviar">
-                </div>
-            </form>
+<!-- About Start -->
+<div class="container-fluid py-5">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Carrito de compras</h4>
+            </div>
+    <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <?php
+            include 'conexionBase.php';
+            $consulta=mysqli_query($conn, "SELECT * FROM productos");
+            while ($vec=mysqli_fetch_array($consulta)) { ?>
+            <div class="item">
+                <span class="codigo-item"><?php $vec[0] ?></span>
+                <span class="titulo-item"><?php echo $vec[1]. " - ". $vec[2] ?></span>
+                <img src="img/boxengasse.png" alt="" class="img-item">
+                <span class="precio-item"><?php $vec[] ?></span>
+                <button class="boton-item">Agregar al Carrito</button>
         </div>
-    </div>
-    <!-- Footer Start -->
-    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+
+<div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
         <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Ubicanos</h4>
@@ -126,7 +98,6 @@
     <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
 </body>
-
 </html>

@@ -4,6 +4,8 @@ if (isset ($_POST['Enviar'])) {
     $IdProducto = $_POST['Id'];
     $nombreProducto = $_POST['Nombre'];
     $tipoProducto = $_POST['Tipo'];
+    $stockProducto = $_POST['Stock'];
+    $precioProducto = $_POST['Precio'];
 
     if (isset($_FILES['Imagen']['name'])) {
         $rutaImagen = 'img/' . $_FILES['Imagen']['name'];
@@ -14,7 +16,7 @@ if (isset ($_POST['Enviar'])) {
 
     $query = "UPDATE productos
     SET IdProducto = '$IdProducto', Nombre = '$nombreProducto', Tipo = '$tipoProducto', 
-    Imagen = '$rutaImagen', Stock = '$stockProducto'";
+    Imagen = '$rutaImagen', Stock = '$stockProducto', Precio = '$precioProducto'";
     $Consulta=mysqli_query($conn,$query);
 
     if ($Consulta) {

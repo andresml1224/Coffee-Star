@@ -63,6 +63,11 @@
                     <input type="number" class="form-control" name="Stock"
                         required="required" />
                 </div>
+                <div class="form-group">
+                    <h2 class="text-primary font-weight-medium m-0">Ingrese el precio</h2>
+                    <input type="number" class="form-control" name="Precio"
+                        required="required" />
+                </div>
                 <div>
                     <input class="btn btn-primary btn-block font-weight-bold py-3" type="reset" value="Reset">
                     <input class="btn btn-primary btn-block font-weight-bold py-3" type="submit" value="Enviar" name="Enviar">

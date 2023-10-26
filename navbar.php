@@ -25,6 +25,7 @@
                     </div>
                 </div>
                 <a href="Perfil.php" class="nav-item nav-link">Ver Perfil</a>
+                <a href="Carrito.php" class="nav-item nav-link">Ver Carrito</a>
                 <a href="" class="nav-item nav-link">Cerrar Sesion</a>
             </div>
         </div>
@@ -96,6 +97,7 @@
                     </div>
                 </div>
                 <a href="Perfil.php" class="nav-item nav-link">Ver Perfil</a>
+                <a href="Carrito.php" class="nav-item nav-link">Ver Carrito</a>
                 <a href="" class="nav-item nav-link">Cerrar Sesion</a>
             </div>
         </div>

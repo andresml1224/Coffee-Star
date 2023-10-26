@@ -5,12 +5,13 @@ if (isset ($_POST['Enviar'])) {
     $nombreProducto = $_POST['Nombre'];
     $tipoProducto = $_POST['Tipo'];
     $stockProducto = $_POST['Stock'];
+    $precioProducto = $_POST['Precio'];
     $rutaImagen = 'img/'.$_FILES['Imagen']['name'];
     $nombreImagen = $_FILES['Imagen']['tmp_name'];
     move_uploaded_file($nombreImagen,$rutaImagen);
     $query ="INSERT INTO 
-            productos(IdProducto, Nombre, Tipo, Imagen, Stock)
-            VALUES('$IdProducto','$nombreProducto','$tipoProducto', '$rutaImagen', '$stockProducto')";
+            productos(IdProducto, Nombre, Tipo, Imagen, Stock, Precio)
+            VALUES('$IdProducto','$nombreProducto','$tipoProducto', '$rutaImagen', '$stockProducto', '$precioProducto')";
     $Consulta=mysqli_query($conn,$query);
 
     if ($Consulta) {
