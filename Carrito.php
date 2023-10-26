@@ -45,9 +45,10 @@
             <div class="item">
                 <span class="codigo-item"><?php $vec[0] ?></span>
                 <span class="titulo-item"><?php echo $vec[1]. " - ". $vec[2] ?></span>
-                <img src="img/boxengasse.png" alt="" class="img-item">
-                <span class="precio-item"><?php $vec[] ?></span>
+                <img src="img/logo.png" alt="" class="img-item">
+                <span class="precio-item"><?php $vec[5] ?></span>
                 <button class="boton-item">Agregar al Carrito</button>
+            <?php } ?>
         </div>
         <!-- Carrito de Compras -->
         <div class="carrito" id="carrito">
