@@ -50,7 +50,13 @@
     <option value="2">Mesero</option>
     <option value="4">Cliente</option>
     </select>                    
-</div>       
+</div>    
+
+<div class="form-group">
+    <h2 class="text-primary font-weight-medium m-0">Ingrese su foto personal (No es obligatorio)</h2>
+        <input type="file" class="form-control" name="Imagen" id="" accept="image/*"/>
+</div>
+
 
 <div class="col-md-12 text-center ">
     <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm" value="Registrar" name="Registrar">Registrar</button><br>

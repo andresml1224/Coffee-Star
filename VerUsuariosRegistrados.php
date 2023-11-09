@@ -49,6 +49,7 @@
             <th>Rol</th>
             <th>Correo</th>
             <th>Clave</th>
+            <th>Imagen</th>
         </tr>
         <?php
         if (isset($_GET['btns']) && $_GET ['Buscar'] != NULL){
@@ -67,6 +68,7 @@
                 <td><?php echo $vec[3];?></td>
                 <td><?php echo $vec[4];?></td>
                 <td><?php echo $vec[5];?></td>
+                <td><img src="<?php echo $vec[6];?>" style="width: 200px; height: auto;"></td>
             </tr>
         
         <?php 
