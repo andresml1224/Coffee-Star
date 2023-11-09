@@ -45,7 +45,8 @@
     $query="DELETE FROM productos WHERE IdProducto = $PK";
     $Consulta=mysqli_query($conn,$query);
     if ($Consulta) {
-        echo "Se elimino el producto a la bd a la tabla correspondiente" . "<br>";
+        echo "<script> alert('Producto Eliminado');
+        window.location.href='VerProducto.php'; </script>";
     }else {
         echo "Hay un error en la consulta";
     }

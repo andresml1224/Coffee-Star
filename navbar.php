@@ -17,13 +17,6 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto p-4">
                 <a href="index.php" class="nav-item nav-link active">Principal</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
-                    <div class="dropdown-menu text-capitalize">
-                        <a href="FormPedido.php" class="dropdown-item">Pedido</a>
-                        <a href="FormCliente.php" class="dropdown-item">Clientes</a>
-                    </div>
-                </div>
                 <a href="Perfil.php" class="nav-item nav-link">Ver Perfil</a>
                 <a href="Carrito.php" class="nav-item nav-link">Ver Carrito</a>
                 <a href="Login.php" class="nav-item nav-link">Cerrar Sesion</a>
@@ -94,6 +87,7 @@
                         <a href="VerCliente.php" class="dropdown-item">Clientes</a>
                         <a href="VerVenta.php" class="dropdown-item">Venta</a>
                         <a href="VerEmpleado.php" class="dropdown-item">Empleado</a>
+                        <a href="VerUsuariosRegistrados.php" class="dropdown-item">Usuarios registrados</a>
                     </div>
                 </div>
                 <a href="Perfil.php" class="nav-item nav-link">Ver Perfil</a>

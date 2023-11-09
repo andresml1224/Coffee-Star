@@ -75,7 +75,8 @@
     $query="DELETE FROM pedido WHERE IdPedido = $PK";
     $Consulta=mysqli_query($conn,$query);
     if ($Consulta) {
-        echo "Se elimino el empleado a la bd a la tabla correspondiente" . "<br>";
+        echo "<script> alert('Pedido Eliminado');
+        window.location.href='VerPedido.php'; </script>";
     }else {
         echo "Hay un error en la consulta";
     }

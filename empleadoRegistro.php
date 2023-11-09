@@ -11,11 +11,7 @@ $query ="INSERT INTO
         VALUES('$cedulaEmpleado','$nombreEmpleado','$cargoEmpleado', '$correoEmpleado', '$cedulaEmpleado')";
 $Consulta=mysqli_query($conn,$query);
 
-$query2 = "INSERT INTO usuarios(IdUsuarios ,Documento, Nombre, Rol, Correo, Clave)
-        VALUES('$cedulaEmpleado','$cedulaEmpleado', '$nombreEmpleado', '$cargoEmpleado', '$correoEmpleado', '$cedulaEmpleado')";
-    $ConsultaUsuario=mysqli_query($conn, $query2);
-
-if ($Consulta && $ConsultaUsuario) {
+if ($Consulta) {
     echo "Se inserto el empleado a la bd a la tabla correspondiente" . "<br>";
     echo "<a href = 'FormEmpleado.php'>Volver</a>";
 }else {

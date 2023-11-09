@@ -75,7 +75,8 @@
     $query="DELETE FROM venta WHERE IdVenta = $PK";
     $Consulta=mysqli_query($conn,$query);
     if ($Consulta) {
-        echo "Se elimino la venta a la bd a la tabla correspondiente" . "<br>";
+        echo "<script> alert('Venta Eliminada');
+        window.location.href='VerVenta.php'; </script>";
     }else {
         echo "Hay un error en la consulta";
     }

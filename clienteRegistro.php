@@ -10,11 +10,7 @@ $correoCliente = $_POST['Correo'];
         VALUES($cedulaCliente,'$nombreCliente','$correoCliente', '$cedulaCliente')";
     $Consulta=mysqli_query($conn,$query);
 
-    $query2 = "INSERT INTO usuarios(IdUsuarios ,Documento, Nombre, Rol, Correo, Clave)
-        VALUES($cedulaCliente,'$cedulaCliente', '$nombreCliente', 4, '$correoCliente', $cedulaCliente)";
-    $ConsultaUsuario=mysqli_query($conn, $query2);
-
-    if ($Consulta && $ConsultaUsuario) {
+    if ($Consulta) {
         echo "Se inserto el cliente a la bd a la tabla correspondiente" . "<br>";
         echo "<a href = 'FormCliente.php'>Volver</a>";
     }else {

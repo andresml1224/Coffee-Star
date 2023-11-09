@@ -59,7 +59,7 @@
                               </p>
                            </div>
                            <div class="form-group">
-                              <p class="text-center">¿No tienes cuenta? <a href="#" id="signup">Registrate</a></p>
+                              <p class="text-center">¿No tienes cuenta? <a href="registroUsuario.php" id="signup">Registrate</a></p>
                            </div>
                         </form>
                  
@@ -69,7 +69,7 @@
 			      <div class="myform form ">
                         <div class="logo mb-3">
                            <div class="col-md-12 text-center">
-                              <h1 >Registrarse</h1>
+                              <h1>Registrarse</h1>
                            </div>
                         </div>
                         <form action="#" name="registration">
@@ -100,8 +100,8 @@
                             </div>
                         </form>
                      </div>
-			</div>
-		</div>
+			   </div>
+		   </div>
       </div>   
          
 </body>
