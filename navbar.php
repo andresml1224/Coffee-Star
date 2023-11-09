@@ -16,7 +16,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto p-4">
-                <a href="index.php" class="nav-item nav-link active">Principal</a>
+                <a href="index.php" class="nav-item nav-link">Principal</a>
                 <a href="Perfil.php" class="nav-item nav-link">Ver Perfil</a>
                 <a href="Carrito.php" class="nav-item nav-link">Ver Carrito</a>
                 <a href="Login.php" class="nav-item nav-link">Cerrar Sesion</a>
@@ -68,7 +68,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto p-4">
-                <a href="index.php" class="nav-item nav-link active">Principal</a>
+                <a href="index.php" class="nav-item nav-link">Principal</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
                     <div class="dropdown-menu text-capitalize">
@@ -144,7 +144,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto p-4">
-                <a href="index.php" class="nav-item nav-link active">Principal</a>
+                <a href="index.php" class="nav-item nav-link">Principal</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
                     <div class="dropdown-menu text-capitalize">
@@ -213,7 +213,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto p-4">
-                <a href="index.php" class="nav-item nav-link active">Principal</a>
+                <a href="index.php" class="nav-item nav-link">Principal</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
                     <div class="dropdown-menu text-capitalize">
