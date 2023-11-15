@@ -248,7 +248,7 @@ header h1{
             while ($vec=mysqli_fetch_array($consulta)) { ?>
                 <span class="codigo-item"><?php $vec[0] ?></span>
                 <span class="titulo-item"><?php echo $vec[1]. " - ". $vec[2] ?></span>
-                <img src="img/logo.png" alt="" class="img-item" style="height: 200px; width: 130px">
+                <img src="<?php echo $vec[3]?>" alt="" class="img-item" style="height: 200px; width: 130px">
                 <span class="precio-item"><?php echo "$ ". $vec[5] ?></span>
                 <button class="boton-item">Agregar al Carrito</button>
             <?php } ?>

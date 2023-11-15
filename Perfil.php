@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (!isset($_SESSION['Id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$idUsuario = $_SESSION['Id'];
+$nombreUsuario = $_SESSION['Nombre'];
+$rolUsuario = $_SESSION['Rol'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,64 +39,43 @@
 </head>
 
 <body>
-    <?php
+        <?php
         include "navbar.php";
-    ?>
-    
-    <div class="container mt-5">
-    
-    <div class="row d-flex justify-content-center">
         
-        <div class="col-md-7">
-            
-            <div class="card p-3 py-4">
-                <?php
-                    include "conexionBase.php";
-                    $Documento = intval($_POST['Documento']);
-                    $usuario = "SELECT * FROM usuarios WHERE idUsuarios = $Documento";
-                    $resultado = mysqli_query($conn,$usuario);
-                    if (mysqli_num_rows($resultado) > 0) {
-                        while ($row = mysqli_fetch_assoc($resultado)) {
-                            $user = $row;
-                            break;
-                        }
-                    } else {
-                        echo "No se encontró el usuario especificado";
-                        exit;
-                    }
+        ?>
     
-                    // Display the user's profile information
-                    echo '<div class="text-center">
-                        <img src="' . $user['imagen'] . '" style="width: 200px; height: auto;" width="100" class="rounded-circle">
-                    </div>';
-    
-                    echo '<div class="text-center mt-3">
-                        <span class="bg-secondary p-1 px-4 rounded text-white">' . $user['tipo'] . '</span>
-                        <h5 class="mt-2 mb-0">' . $user['nombre'] . ' ' . $user['apellido'] . '</h5>
-    
-                        <ul class="social-list">
-                            <li><i class="fa fa-facebook"></i></li>
-                            <li><i class="fa fa-dribbble"></i></li>
-                            <li><i class="fa fa-instagram"></i></li>
-                            <li><i class="fa fa-linkedin"></i></li>
-                            <li><i class="fa fa-google"></i></li>
-                        </ul>
-    
-                        <div class="buttons">
-                            <a href="editarPerfil.php?id_usuario=' . $user['id'] . '" class="btn btn-outline-primary px-4">Editar Perfil</a>
+            '<div class="container mt-5">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-7">
+                                <div class="card p-3 py-4">
+                                    <div class="text-center">
+                                    <?php
+                                        if (isset($_SESSION['ImagenUsuario'])) {
+                                            echo '<img src="' . $_SESSION['ImagenUsuario'] . '" alt="Imagen de perfil" width="100" class="rounded-circle">';
+                                        }
+                                    ?>
+                                        
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <h5 class="mt-2 mb-0"><?php echo $nombreUsuario; ?></h5>
+                                        <span>Rol: <?php 
+                                            if ($rolUsuario == 1) {
+                                            echo "Administrador";
+                                            }elseif ($rolUsuario == 2) {
+                                                echo "Mesero";
+                                            }elseif ($rolUsuario == 3) {
+                                                echo "Chef";
+                                            }else{
+                                                echo "Cliente";
+                                            }
+                                        ?></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>';
-                ?>
-               
-                
-                
-            </div>
-            
-        </div>
+                      </div>'
         
-    </div>
-    
-</div>
+        
 
 
 

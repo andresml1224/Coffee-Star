@@ -24,7 +24,7 @@
 							<h1>Registro</h1>
 						 </div>
 					</div>
-                    <form action="Registrar.php" method="post" name="registro">
+                    <form action="Registrar.php" method="post" name="registro" enctype="multipart/form-data">
 
 <div class="form-group"> <!-- Full Name -->
     <label for="full_name_id" class="control-label">Nombre</label>
