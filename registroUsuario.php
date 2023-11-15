@@ -54,7 +54,7 @@
 
 <div class="form-group">
     <h2 class="text-primary font-weight-medium m-0">Ingrese su foto personal (No es obligatorio)</h2>
-        <input type="file" class="form-control" name="Imagen" id="" accept="image/*"/>
+        <input type="file" class="form-control" name="ImagenUsuario" id="" accept="image/*"/>
 </div>
 
 

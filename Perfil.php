@@ -38,38 +38,43 @@
         <div class="col-md-7">
             
             <div class="card p-3 py-4">
-                
-                <div class="text-center">
-                    <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle">
-                </div>
-                
-                <div class="text-center mt-3">
-                    <span class="bg-secondary p-1 px-4 rounded text-white">Pro</span>
-                    <h5 class="mt-2 mb-0">Alexender Schidmt</h5>
-                    <span>UI/UX Designer</span>
-                    
-                    <div class="px-4 mt-1">
-                        <p class="fonts">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    
-                    </div>
-                    
-                     <ul class="social-list">
-                        <li><i class="fa fa-facebook"></i></li>
-                        <li><i class="fa fa-dribbble"></i></li>
-                        <li><i class="fa fa-instagram"></i></li>
-                        <li><i class="fa fa-linkedin"></i></li>
-                        <li><i class="fa fa-google"></i></li>
-                    </ul>
-                    
-                    <div class="buttons">
-                        
-                        <button class="btn btn-outline-primary px-4">Message</button>
-                        <button class="btn btn-primary px-4 ms-3">Contact</button>
-                    </div>
-                    
-                    
-                </div>
-                
+                <?php
+                    include "conexionBase.php";
+                    $Documento = intval($_POST['Documento']);
+                    $usuario = "SELECT * FROM usuarios WHERE idUsuarios = $Documento";
+                    $resultado = mysqli_query($conn,$usuario);
+                    if (mysqli_num_rows($resultado) > 0) {
+                        while ($row = mysqli_fetch_assoc($resultado)) {
+                            $user = $row;
+                            break;
+                        }
+                    } else {
+                        echo "No se encontró el usuario especificado";
+                        exit;
+                    }
+    
+                    // Display the user's profile information
+                    echo '<div class="text-center">
+                        <img src="' . $user['imagen'] . '" style="width: 200px; height: auto;" width="100" class="rounded-circle">
+                    </div>';
+    
+                    echo '<div class="text-center mt-3">
+                        <span class="bg-secondary p-1 px-4 rounded text-white">' . $user['tipo'] . '</span>
+                        <h5 class="mt-2 mb-0">' . $user['nombre'] . ' ' . $user['apellido'] . '</h5>
+    
+                        <ul class="social-list">
+                            <li><i class="fa fa-facebook"></i></li>
+                            <li><i class="fa fa-dribbble"></i></li>
+                            <li><i class="fa fa-instagram"></i></li>
+                            <li><i class="fa fa-linkedin"></i></li>
+                            <li><i class="fa fa-google"></i></li>
+                        </ul>
+    
+                        <div class="buttons">
+                            <a href="editarPerfil.php?id_usuario=' . $user['id'] . '" class="btn btn-outline-primary px-4">Editar Perfil</a>
+                        </div>
+                    </div>';
+                ?>
                
                 
                 
