@@ -27,73 +27,34 @@
 </head>
 
 <body>
-    <?php
+<?php
         include "navbar.php";
     ?>
 
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="section-title">
-            <form class="d-flex" role="search" action="" method="GET">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="Buscar">
-        <button name="btns" class="btn btn-primary" type="submit">Buscar</button>
-    </form> <br>
 
-<fieldset>
+<form action="" method="post">
+        <h2>¿Esta seguro de eliminar el pedido?</h2>
+        <input type="submit" class="btn btn-primary" value="Si" name="Si">
+        <input type="hidden" value="<?php echo $_GET['doc']?>" name="hid">
+        <input type="reset" class="btn btn-primary" value="No" name="No">
+      </form>
+      <?php
+  if (isset($_POST['Si'])) {
+    include 'conexionBase.php';
+    $PK=$_POST['hid'];
+    $query="DELETE FROM usuarios WHERE IdUsuarios = $PK";
+    $Consulta=mysqli_query($conn,$query);
+    if ($Consulta) {
+        echo "<script> alert('Usuario Eliminado');
+        window.location.href='VerUsuariosRegistrados.php'; </script>";
+    }else {
+        echo "Hay un error en la consulta";
+    }
+  }
+?>
 
-    <table class= "table">
-        <tr>
-            <th>idUsuarios</th>
-            <th>Documento</th>
-            <th>Nombre</th>
-            <th>Rol</th>
-            <th>Correo</th>
-            <th>Clave</th>
-            <th>Imagen</th>
-            <th>Acciones</th>
-        </tr>
-        <?php
-        if (isset($_GET['btns']) && $_GET ['Buscar'] != NULL){
-        $search=$_GET['Buscar'];
-        $Buscar = "%$search%";
-        include "conexionBase.php";
-        $mostrar = "SELECT * FROM usuarios WHERE IdUsuarios LIKE '$Buscar'";
-        $resultado = mysqli_query($conn,$mostrar);
-            if (mysqli_num_rows($resultado)>0){
-        
-        while ($vec= mysqli_fetch_array($resultado)) {?>
-            <tr>
-                <td><?php echo $vec[0];?></td>
-                <td><?php echo $vec[1];?></td>
-                <td><?php echo $vec[2];?></td>
-                <td><?php echo $vec[3];?></td>
-                <td><?php echo $vec[4];?></td>
-                <td><?php echo $vec[5];?></td>
-                <td><img src="<?php echo $vec[6];?>" style="width: 200px; height: auto;"></td>
-                <td>
-                    <a href='EliminarUsuario.php?doc=<?php echo $vec[0]?>'><i class="fa-duotone fa-trash"></i></a>
-                </td>
-            </tr>
-        
-        <?php 
-        }
-        }
-            else {
-                echo "No se encontraron datos para esa consulta";
-            }
-        }
-        else {
-            echo "Ingrese el indicio de busqueda";
-        }
-        ?>
-        
-    </table>
-    </fieldset>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+<!-- Footer Start -->
+<div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
         <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Ubicanos</h4>
@@ -130,7 +91,6 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="https://kit.fontawesome.com/c36cb32bff.js" crossorigin="anonymous"></script>
 
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
